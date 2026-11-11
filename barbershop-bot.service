@@ -1,0 +1,14 @@
+[Unit]
+Description=Barbershop Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/home/%i/barbershop-bot
+ExecStart=/home/%i/barbershop-bot/venv/bin/python /home/%i/barbershop-bot/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
